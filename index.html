@@ -11,7 +11,7 @@
 <body>
     <div id="head">
         <h3 class="welcome">
-            DUNK
+            To Pino
         </h3>
     </div>
     <div class="button">
@@ -64,6 +64,10 @@
     </div> -->
     <pre>
     <code style="color: white;">
+        ###################
+        Work IV
+        ###################
+
         import numpy as np
         import cv2
         from gpiozero import RGBLED
@@ -112,6 +116,23 @@
         
         capture.release()
         cv2.destroyAllWindows()</code></pre>
+
+    <pre>
+            <code>
+                ###################
+                Work III
+                ###################
+                from gpiozero import RGBLED
+                from time import sleep
+                led = RGBLED(2,3,4)
+
+                while True :
+                    rgb = list(map(int,input('Please input RGB here >>> ').split(' ')))
+                    led.color = (rgb[0]/255,rgb[1]/255,rgb[2]/255)
+                    print('Red : '+str(round(rgb[0]/2.55,2)),'Green : '+str(round(rgb[1]/2.55,2)),'Blue : '+str(round(rgb[2]/2.55,2)))
+                    sleep(1)
+            </code>
+        </pre>
 </body>
 
 </html>
