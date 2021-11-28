@@ -1,0 +1,79 @@
+@keyframes colorChange {
+    from {background-color: #000000;}
+    50% {background-color: #0e0e0e;}
+    to {background-color: #000000;}
+}
+@keyframes colorHover {
+    from {background-color: #0e0e0e;}
+    to {background-color: #1D3557;}
+}
+#head{
+    position: sticky;
+    top: 0;
+    margin: auto;
+    width: max-content;
+    height: 100;
+    background-color:#1D3557;
+    box-shadow: 5px 5px #E63946;
+}
+body {
+    font-family: 'Julius Sans One', sans-serif;
+    animation-name: colorChange;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+.welcome {
+    margin: 20px;
+    padding: auto;
+    color: #F1FAEE;
+    text-align: center;
+    font-size:xx-large ;
+
+}
+.button {
+    text-align: center;
+}
+.reg {
+    width: 100px;
+    height: 50px;
+    font-size: large;
+    font-family: 'Julius Sans One', sans-serif;
+    background-color: #3d7932;
+    box-shadow: 3px 3px #2a4c61;
+    border: none;
+}
+button:hover{
+    background-color: #1D3557;
+}
+button:active{
+    transform: translateY(3px);
+}
+.log {
+    width: 100px;
+    height: 50px;
+    font-size: large;
+    font-family: 'Julius Sans One', sans-serif;
+    background-color: #3d7932;
+    box-shadow: 3px 3px #2a4c61;
+    border: none;
+}
+.word {
+    font-size: small;
+    max-width: 100%;
+    border-style: groove;
+    column-rule-color: #F1FAEE;
+    text-align: center;
+    margin-top: 10px;
+    margin: 20px;
+    color: #F1FAEE;
+    column-count: 3;
+    
+}
+.word:hover {
+    background-color: #1D3557;
+    transition-duration: 1s;
+}
+h1{
+    
+    color: #F1FAEE;
+}
