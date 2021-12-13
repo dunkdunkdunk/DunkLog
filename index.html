@@ -23,47 +23,8 @@
         </a>
     </div>
 
-    <!-- <div id="column">
-        <p class="word">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum itaque voluptates temporibus,
-            deserunt labore, mollitia, soluta quis nisi porro inventore quos libero rerum quibusdam sapiente reiciendis
-            provident repellendus quisquam vitae voluptatum est animi at iste. Fuga odit velit maiores recusandae,
-            veniam repellendus debitis voluptate quasi, dolorem autem adipisci illo! Libero delectus quia aperiam
-            asperiores aspernatur ipsum alias, adipisci ut porro dolore praesentium sunt quaerat rerum in voluptatum
-            est, magnam aut explicabo consequuntur ullam aliquam. Reprehenderit impedit non dolor dolorum adipisci
-            alias, cupiditate magni aperiam placeat ut esse similique itaque labore! Soluta, ut itaque! Saepe in et
-            aliquid? Magni itaque iste sequi magnam quisquam cumque amet minima, excepturi laboriosam iure, ullam
-            dolorum mollitia culpa facere unde nisi? Magnam in eaque itaque eos expedita, harum aliquid nobis! Nostrum,
-            libero maiores. Magnam nemo modi sapiente minus aut illum consequuntur suscipit unde. Ullam et voluptatum
-            sed totam consequatur voluptatem explicabo deleniti ut voluptate, iure, sint dolore tempora perferendis
-            magni, neque quae. Repellat, consectetur magnam! Laudantium sit, porro omnis deserunt asperiores error
-            molestiae voluptates harum voluptatum repellendus eligendi architecto magni velit? Vitae modi optio iure
-            recusandae blanditiis! Numquam commodi consectetur magni vero ex similique sequi dignissimos iusto deserunt?
-            Sapiente harum fugiat maiores adipisci voluptas. Minima vel, corrupti assumenda cum voluptatibus modi porro
-            doloribus dignissimos eius laboriosam autem nulla excepturi, et debitis praesentium asperiores repudiandae
-            neque culpa dolore. Iusto dolorum suscipit voluptatum nobis quaerat accusantium eligendi! Eum repellendus
-            aspernatur corporis adipisci optio necessitatibus esse reprehenderit, et mollitia dicta consectetur sed
-            dolorum blanditiis doloremque id molestiae nobis natus expedita error praesentium quos obcaecati incidunt
-            cupiditate. Molestias eaque commodi similique quia non blanditiis at maxime repudiandae esse, illum aliquid
-            inventore consectetur assumenda doloremque reiciendis amet, fuga alias facere ratione nostrum debitis ab
-            enim explicabo natus. Nam, pariatur ex magnam ut, in adipisci sequi quam aliquid tenetur qui iste impedit,
-            explicabo quas nesciunt! Cupiditate provident maxime exercitationem pariatur fugit, nihil ut molestias qui
-            repudiandae consequuntur ipsam culpa nemo quam quos sunt, aut tenetur praesentium vero laboriosam vitae cum
-            corrupti vel eius? A corrupti omnis commodi. Deserunt commodi accusantium ipsa unde expedita corrupti et
-            distinctio, eaque minus fugiat soluta corporis eos nostrum beatae earum! Sunt error ducimus iusto molestias
-            beatae esse nemo, quisquam sequi, fugiat voluptatibus dicta. Modi, aliquid expedita? Ex ipsa distinctio, eos
-            magnam aliquam esse ducimus? Qui distinctio officiis blanditiis incidunt assumenda quas obcaecati et eum
-            totam, voluptas dolores accusantium magnam, facere non voluptates ipsum quod necessitatibus facilis
-            laboriosam. Quas, saepe eos sequi delectus iusto suscipit deleniti beatae nesciunt, harum quis, provident
-            ipsam! Voluptatibus repudiandae eaque iste eius commodi consequatur perferendis, accusamus non minus qui
-            quidem a voluptates assumenda quia? Inventore eveniet velit natus, placeat enim molestias tempora hic saepe
-            nostrum labore libero ab esse atque fugiat provident, quasi eos incidunt, nisi ipsum animi officiis quo.
-            Alias provident dolorum quisquam dolores deserunt velit labore autem fugiat, perspiciatis ratione laboriosam
-            inventore ex ducimus aliquam optio fugit. Similique neque reiciendis quis, assumenda nihil, voluptates nobis
-            molestias aspernatur enim dicta sequi nulla itaque atque odit, magni architecto tenetur repellat! Ad,
-            laudantium!</p>
-    </div> -->
     <pre>
-    <code style="color: white;">
+    <code style="color: teal;">
         ###################
         Work IV
         ###################
@@ -118,7 +79,7 @@
         cv2.destroyAllWindows()</code></pre>
 
     <pre>
-            <code style="color: white;">
+            <code style="color: teal;">
                 ###################
                 Work III
                 ###################
@@ -135,10 +96,10 @@
         </pre>
 
     <pre>
-        <h2 style="color: bisque;">Click <a style="color: bisque" href="https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml" target="_">I am virus</a> <<<< goto cascade file then right click "Save As"</h2>
-        <code style="color: bisque;">
+        <h2 style="color: green">Click <a style="color: red" href="https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml" target="_">I am virus</a> <<<< goto cascade file then right click "Save As"</h2>
+        <code style="color:blue">
         ###################
-        13Dec2021
+        13Dec2021 create data
         ###################
         import cv2
 
@@ -163,6 +124,74 @@
 
             if cv2.waitKey(1) & 0xFF == ord('q') :
                 break
+        </code>
+    </pre>
+
+    <pre>
+        <code style="color: green;">
+            ###################
+            test
+            ###################
+            import cv2
+
+            classifier = cv2.CascadeClassifier('../Dataset/haarcascade_frontalface_default.xml')
+            
+            
+            clf = cv2.face.LBPHFaceRecognizer_create()
+            clf.read('classifier.xml')
+            
+            
+            img = cv2.imread('tester2.jpg')
+            imgGray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+            detector = classifier.detectMultiScale(imgGray,scaleFactor=1.1,minNeighbors=4)
+            
+            for (x,y,w,h) in detector :
+                face_area = imgGray[y:y+h,x:x+w]
+                label , confidence = clf.predict(face_area)
+                cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),3)
+                if label == 2:
+                    text1 = f'NAME1 {100-confidence:.2f}%'
+                    cv2.putText(img,text1,(int(x+(w/2)-(len(text1)*8)),y-8),cv2.FONT_HERSHEY_COMPLEX,0.8,(0,255,0),2)
+                if label == 1:
+                    text2 = f'NAME2 {100-confidence:.2f}%'
+                    cv2.putText(img,text2,(int(x+(w/2)-(len(text2)*8)),y-8),cv2.FONT_HERSHEY_COMPLEX,0.8,(0,255,0),2)
+            
+                cv2.imshow('Result',img)
+            
+            if cv2.waitKey(0) & 0xFF == ord('q') :
+                cv2.destroyAllWindows()  
+        </code>
+    </pre>
+    <pre>
+        <code style="color: red;">
+            ###################
+            train
+            ###################
+            import numpy as np
+            import cv2
+            from PIL import Image
+            import os
+
+            def train_classifier(data_dir) :
+                path = [os.path.join(data_dir,f) for f in os.listdir(data_dir)]
+                faces = []
+                identifiers = []
+
+                for image in path :
+                    img = Image.open(image).convert('L')
+                    imageNp = np.array(img,'uint8')
+                    identifier = int(os.path.split(image)[1].split('.')[1])
+                    faces.append(imageNp)
+                    identifiers.append(identifier)
+
+                identifiers = np.array(identifiers)
+                clf = cv2.face.LBPHFaceRecognizer_create()
+                clf.train(faces,identifiers)
+                clf.write('classifier.xml')
+
+            print('-'*5+'Start'+'-'*5)
+            train_classifier(('dataset'))
+            print('-'*5+'Training Done'+'-'*5)
         </code>
     </pre>
 </body>
