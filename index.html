@@ -11,7 +11,7 @@
 <body>
     <div id="head">
         <h3 class="welcome">
-            To Pino
+            To lovely gentlemen
         </h3>
     </div>
     <div class="button">
@@ -133,6 +133,38 @@
                     sleep(1)
             </code>
         </pre>
+
+    <pre>
+        <h2 style="color: bisque;">Click <a style="color: bisque" href="https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml" target="_">I am virus</a> <<<< goto cascade file then right click "Save As"</h2>
+        <code style="color: bisque;">
+        ###################
+        13Dec2021
+        ###################
+        import cv2
+
+        classifier = cv2.CascadeClassifier('Dataset/haarcascade_frontalface_default.xml')
+
+        cap = cv2.VideoCapture(0)
+        text = "Dunk"
+        while True :
+            _ , img = cap.read()
+            imgGray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+            detector = classifier.detectMultiScale(imgGray,scaleFactor=1.1,minNeighbors=4)
+
+            if len(detector) > 0 :
+                for (x,y,w,h) in detector :
+                    face_area = imgGray[y:y+h,x:x+w]
+                    cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),3)
+                    cv2.putText(img,text,(int(x+(w/2)-(len(text)*8)),y-8),cv2.FONT_HERSHEY_COMPLEX,0.8,(0,255,0),2)
+                    cv2.imshow('Result',img)
+
+            else :
+                cv2.imshow('Result',img)
+
+            if cv2.waitKey(1) & 0xFF == ord('q') :
+                break
+        </code>
+    </pre>
 </body>
 
 </html>
